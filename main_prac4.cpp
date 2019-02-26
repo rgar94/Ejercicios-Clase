@@ -105,7 +105,8 @@ void display ( void )   // Creamos la funcion donde se dibuja
 	glLoadIdentity();
 
 		glTranslatef(transX, transY, transZ);
-		glRotatef(30, angleX, angleY, angleZ);
+		glRotatef(angleX, 1, 0, 0);
+		glRotatef(angleY, 0, 1, 0);
 		//Poner Código Aquí.
 		prisma();
 		glTranslatef(-.5, -1, 0);
