@@ -823,7 +823,7 @@ void animacion()
 		}
 		if(recorrido3)//estado C
 		{
-			rotKit = 180+tanf(125.0/310);
+			rotKit = 200+tanf(125.0/310);
 			printf("%f", rotKit);
 			movKitZ --;
 			movKitX = movKitX -0.4;
