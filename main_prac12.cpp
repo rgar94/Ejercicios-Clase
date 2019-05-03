@@ -125,6 +125,7 @@ bool g_fanimacion = false;
 bool g_avanza = false;
 
 bool circuito = false;
+bool circuito2 = false;
 bool recorrido1 = true;
 bool recorrido2 = false;
 bool recorrido3 = false;
@@ -855,6 +856,63 @@ void animacion()
 		}
 	}
 
+	if (circuito2)//comienza maquina
+	{ 
+		if (recorrido1)//estado A
+		{
+			rotKit = 0;
+			movKitZ--;
+			if (movKitZ < -155)//transicion a B
+			{
+				recorrido1 = false;
+				recorrido2 = true;
+			}
+		}
+		if (recorrido2)//estado B
+		{
+			rotKit = 90;
+			movKitX--;
+			if (movKitX <125)//transicion a C
+			{
+				recorrido2 = false;
+				recorrido3 = true;
+
+			}
+		}
+		if (recorrido3)//estado C
+		{
+			rotKit = 200 + tanf(125.0 / 310);
+			printf("%f", rotKit);
+			movKitZ++;
+			movKitX = movKitX + 0.4;
+			if (movKitZ > 155)//transicion a D
+			{
+				recorrido3 = false;
+				recorrido5 = true;
+			}
+		}/*
+		if(recorrido4)//estado D
+		{
+			rotKit = 135;
+			movKitX --;
+			if(movKitX<0)//transicion a E
+			{
+				recorrido4 = false;
+				recorrido5 = true;
+			}
+		}*/
+		if (recorrido5)//estado E
+		{
+			
+			rotKit = 90;
+			movKitX--;
+			if (movKitX<0)//transicion a A
+			{
+				recorrido5 = false;
+				recorrido1 = true;
+			}
+		}
+	}
 
 	//Movimiento del monito
 	if (play)
@@ -956,6 +1014,15 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 		case 'I':
 				circuito^= true; //Activamos/desactivamos la animacíon
 				g_fanimacion = false;
+				circuito2 = false;
+			break;
+
+
+		case 'r':		//  
+		case 'R':
+			circuito2 ^= true; //Activamos/desactivamos la animacíon
+			g_fanimacion = false;
+			circuito = false;
 			break;
 
 		case 'k':		//
