@@ -1,11 +1,12 @@
-//Semestre 2017 - 2
-//************************************************************//
-//************************************************************//
-//************** Alumno (s): *********************************//
-//*************											******//
-//*************											******//
-//************************************************************//
-
+ //Semestre 2019 - 2
+ /*
+ Garc√≠a Callejas Ricardo
+ Grupo 2
+ Visual Studio 2017
+ Pr√°ctica 12
+ Manual: Dibujamos con ayuda de un modelo un auto junto a sus llantas, las animamos dentro de la funci√≥n
+ animaci√≥n, cuidando nuestras conticiones para que el auto se mueva hacia adelante o hacia atras.
+ */
 #include "texture.h"
 #include "figuras.h"
 #include "Camera.h"
@@ -115,7 +116,7 @@ CModel llanta;
 CModel casita;
 CModel oldhouse;
 
-//AnimaciÛn del coche
+//Animaci√≥n del coche
 float angRot = 0.0;
 float movKitX = 0.0;
 float movKitZ = 0.0;
@@ -710,7 +711,7 @@ void display ( void )   // Creamos la funcion donde se dibuja
 				kit.GLrender(NULL,_SHADED,1.0); //Dibujamos la carroceria
 				//llanta.GLrender(NULL,_SHADED,1.0);
 
-				//Colocar aquÌ las llantas
+				//Colocar aqu√≠ las llantas
 				glPushMatrix(); //llanta frontal der
 					glTranslatef(-6,-1,7.5);
 					glRotatef(-rotTires,1,0,0);
@@ -1006,13 +1007,13 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 
 		case 'O':		//  
 		case 'o':
-				g_fanimacion^= true; //Activamos/desactivamos la animacÌon
+				g_fanimacion^= true; //Activamos/desactivamos la animac√≠on
 				circuito = false;
 			break;
 
 		case 'i':		//  
 		case 'I':
-				circuito^= true; //Activamos/desactivamos la animacÌon
+				circuito^= true; //Activamos/desactivamos la animac√≠on
 				g_fanimacion = false;
 				circuito2 = false;
 			break;
@@ -1020,7 +1021,7 @@ void keyboard ( unsigned char key, int x, int y )  // Create Keyboard Function
 
 		case 'r':		//  
 		case 'R':
-			circuito2 ^= true; //Activamos/desactivamos la animacÌon
+			circuito2 ^= true; //Activamos/desactivamos la animac√≠on
 			g_fanimacion = false;
 			circuito = false;
 			break;
@@ -1191,14 +1192,14 @@ int main ( int argc, char** argv )   // Main Function
 
   glutInit            (&argc, argv); // Inicializamos OpenGL
   glutInitDisplayMode (GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); // Display Mode (Clores RGB y alpha | Buffer Doble )
-  glutInitWindowSize  (500, 500);	// TamaÒo de la Ventana
+  glutInitWindowSize  (500, 500);	// Tama√±o de la Ventana
   glutInitWindowPosition (0, 0);	//Posicion de la Ventana
   glutCreateWindow    ("Practica 12"); // Nombre de la Ventana
   //glutFullScreen     ( );         // Full Screen
   InitGL ();						// Parametros iniciales de la aplicacion
-  glutDisplayFunc     ( display );  //Indicamos a Glut funciÛn de dibujo
-  glutReshapeFunc     ( reshape );	//Indicamos a Glut funciÛn en caso de cambio de tamano
-  glutKeyboardFunc    ( keyboard );	//Indicamos a Glut funciÛn de manejo de teclado
+  glutDisplayFunc     ( display );  //Indicamos a Glut funci√≥n de dibujo
+  glutReshapeFunc     ( reshape );	//Indicamos a Glut funci√≥n en caso de cambio de tamano
+  glutKeyboardFunc    ( keyboard );	//Indicamos a Glut funci√≥n de manejo de teclado
   glutSpecialFunc     ( arrow_keys );	//Otras
   glutIdleFunc		  ( animacion );
 
